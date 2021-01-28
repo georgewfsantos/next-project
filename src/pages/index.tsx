@@ -1,6 +1,6 @@
 import { GetServerSideProps } from 'next';
 import { Title } from '../styles/pages/Home';
-interface Product {
+export interface Product {
   id: string;
   title: string;
 }
