@@ -4,7 +4,7 @@ import dynamic from 'next/dynamic';
 
 const Modal = dynamic(
   () => import ('../../../components/Modal'),
-  {loading: () => <p>Loading...</p>}
+  {loading: () => <p>Loading...</p>, ssr: false }
 )
 
 
