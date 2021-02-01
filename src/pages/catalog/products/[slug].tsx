@@ -1,15 +1,13 @@
-import { useRouter } from 'next/router';
-import { useCallback, useState } from 'react';
-import dynamic from 'next/dynamic';
+import { useRouter } from "next/router";
+import { useCallback, useState } from "react";
+import dynamic from "next/dynamic";
 
-const Modal = dynamic(
-  () => import ('../../../components/Modal'),
-  {loading: () => <p>Loading...</p>, ssr: false }
-)
+const Modal = dynamic(() => import("@/components/Modal"), {
+  loading: () => <p>Loading...</p>,
+  ssr: false,
+});
 
-
-
-export default function Product(){
+export default function Product() {
   const router = useRouter();
   const [isModalVisible, setIsModalVisible] = useState(false);
 
@@ -19,11 +17,11 @@ export default function Product(){
 
   return (
     <div>
-    <h1>{router.query.slug}</h1>
+      <h1>{router.query.slug}</h1>
 
-    <button onClick={handleAddToCart}>Add to cart</button>
+      <button onClick={handleAddToCart}>Add to cart</button>
 
-    {isModalVisible && <Modal />}
+      {isModalVisible && <Modal />}
     </div>
   );
 }
