@@ -1,6 +1,8 @@
 import { GetServerSideProps } from "next";
 import { useCallback } from "react";
 import { Title } from "../styles/pages/Home";
+
+import SEO from "@/components/SEO";
 export interface Product {
   id: string;
   title: string;
@@ -18,6 +20,12 @@ export default function Home({ recommendedProducts }: HomeProps) {
 
   return (
     <div>
+      <SEO
+        title="DevShop: the best coding store"
+        shouldExcludeTitleSuffix
+        image="headset.jpeg"
+      />
+
       <section>
         <Title>Products</Title>
 
