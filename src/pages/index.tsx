@@ -13,11 +13,6 @@ interface HomeProps {
 }
 
 export default function Home({ recommendedProducts }: HomeProps) {
-  const handleSum = useCallback(async () => {
-    const math = (await import("@/lib/math")).default;
-    alert(math.sum(3, 5));
-  }, []);
-
   return (
     <div>
       <SEO
@@ -35,8 +30,6 @@ export default function Home({ recommendedProducts }: HomeProps) {
           })}
         </ul>
       </section>
-
-      <button onClick={handleSum}>Sum</button>
     </div>
   );
 }
